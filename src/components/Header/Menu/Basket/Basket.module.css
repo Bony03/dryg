@@ -1,0 +1,39 @@
+.account {
+  padding: 0 15px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.account svg {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+  transition: all 1s ease;
+}
+.black.account svg {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  fill: #000000;
+}
+.active .account svg {
+  fill: #000000;
+}
+.basket {
+  position: relative;
+}
+.basket::after {
+  content: attr(counter);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  top: 10px;
+  left: -10px;
+}

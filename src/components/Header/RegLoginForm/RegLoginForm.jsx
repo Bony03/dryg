@@ -1,4 +1,4 @@
-import Form from '../../UI/Form/Form'
+import Form from '../../../UI/Form/Form'
 import { useState } from 'react'
 import s from './RegLoginForm.module.css'
 

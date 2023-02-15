@@ -3,17 +3,15 @@ import { Navigation, Pagination, Mousewheel } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import BackgroundImage from '../BackgroundImage/BackgroundImage'
-import Products from '../Products/Products'
-import s from '../Header/Header.module.css'
+import BackgroundImage from './BackgroundImage/BackgroundImage'
+import Products from './Products/Products'
 import './ScreenSlider.css'
-
 const documentSizes = {
   height: window.innerHeight,
   width: window.innerWidth,
 }
 
-const ScreenSlider = (props) => {
+const ScreenSlider = ({ themeColor, setThemeColor, store }) => {
   return (
     <div style={{ overflow: 'hidden' }}>
       <Swiper
@@ -30,21 +28,10 @@ const ScreenSlider = (props) => {
         }}
         mousewheel={true}
         onActiveIndexChange={(swiper) => {
-          console.log(swiper)
-          const headerContainer = document.querySelector(
-            `.${s.headerContainer}`
-          )
-          const swiperItems = document.querySelector('.swiper')
           if (swiper.activeIndex > 0) {
-            headerContainer.classList.remove(s.white)
-            headerContainer.classList.add(s.black)
-            swiperItems.classList.add('black')
+            setThemeColor('black')
           } else {
-            if (headerContainer.classList.contains(s.black)) {
-              headerContainer.classList.remove(s.black)
-              headerContainer.classList.add(s.white)
-            }
-            swiperItems.classList.remove('black')
+            setThemeColor('white')
           }
         }}
       >
@@ -52,9 +39,9 @@ const ScreenSlider = (props) => {
           <BackgroundImage />
         </SwiperSlide>
         <SwiperSlide>
-          <Products store={props.store} />
+          <Products store={store} />
         </SwiperSlide>
-        <SwiperSlide></SwiperSlide>
+        <SwiperSlide>asdasd</SwiperSlide>
       </Swiper>
     </div>
   )
