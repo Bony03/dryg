@@ -11,7 +11,7 @@ const documentSizes = {
   width: window.innerWidth,
 }
 
-const ScreenSlider = ({ themeColor, setThemeColor, store }) => {
+const ScreenSlider = ({ themeColor, setThemeColor, store, setCounter }) => {
   return (
     <div style={{ overflow: 'hidden' }}>
       <Swiper
@@ -39,9 +39,9 @@ const ScreenSlider = ({ themeColor, setThemeColor, store }) => {
           <BackgroundImage />
         </SwiperSlide>
         <SwiperSlide>
-          <Products store={store} />
+          <Products store={store} setCounter={setCounter} />
         </SwiperSlide>
-        <SwiperSlide>asdasd</SwiperSlide>
+        <SwiperSlide></SwiperSlide>
       </Swiper>
     </div>
   )

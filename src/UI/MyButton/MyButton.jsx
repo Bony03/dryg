@@ -3,7 +3,7 @@ import s from './MyButton.module.css'
 const MyButton = ({ children, onclick }) => {
   return (
     <button onClick={onclick} className={s.button}>
-      <p>{children}</p>
+      <p value={children}>{children}</p>
       <svg
         strokeWidth="4"
         stroke="currentColor"

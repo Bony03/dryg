@@ -1,0 +1,99 @@
+.button {
+  padding: 0;
+  margin: 15px auto;
+  border: none;
+  background: none;
+}
+
+.button {
+  --primary-color: #000;
+  --hovered-color: #108df3;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.button p {
+  margin: 0;
+  position: relative;
+  font-size: 25px;
+  color: var(--primary-color);
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 4px;
+  transition: 0.3s ease-out;
+}
+
+.button p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: attr(cssattr);
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.button:hover::after {
+  width: 100%;
+}
+
+.button:hover p::before {
+  width: 100%;
+}
+.button svg {
+  width: 35px;
+  stroke-width: 5px;
+  stroke: #000;
+  transition: stroke 0.3s ease-out 0.2s, transform 0.3s ease-out 0.2s;
+  transform: translateY(5px);
+}
+.button:hover svg {
+  stroke: var(--hovered-color);
+  transform: translateY(0);
+}
+.button .active svg {
+  animation: headShake 0.8s ease-in-out;
+}
+@keyframes headShake {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  6.5% {
+    -webkit-transform: translateX(-6px) rotateY(-9deg);
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+
+  18.5% {
+    -webkit-transform: translateX(5px) rotateY(7deg);
+    transform: translateX(5px) rotateY(7deg);
+  }
+
+  31.5% {
+    -webkit-transform: translateX(-3px) rotateY(-5deg);
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+
+  43.5% {
+    -webkit-transform: translateX(2px) rotateY(3deg);
+    transform: translateX(2px) rotateY(3deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}

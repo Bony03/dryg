@@ -2,7 +2,7 @@ import React from 'react'
 import s from './Menu.module.css'
 import Basket from './Basket/Basket'
 
-const Menu = ({ activeHandler, active, themeColor }) => {
+const Menu = ({ activeHandler, active, themeColor, counter }) => {
   return (
     <>
       <div
@@ -33,7 +33,11 @@ const Menu = ({ activeHandler, active, themeColor }) => {
             <a>About</a>
           </li>
         </ul>
-        <Basket activeHandler={activeHandler} themeColor={themeColor} />
+        <Basket
+          activeHandler={activeHandler}
+          themeColor={themeColor}
+          counter={counter}
+        />
         <div
           className={
             themeColor == 'black' ? `${s.menuIcon} ${s.black}` : s.menuIcon

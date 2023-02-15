@@ -3,7 +3,7 @@ import s from './Header.module.css'
 import { useState } from 'react'
 import RegLoginForm from './RegLoginForm/RegLoginForm'
 import Menu from './Menu/Menu'
-const Header = ({ themeColor }) => {
+const Header = ({ themeColor, counter }) => {
   const [active, setActive] = useState({ menu: false, form: false })
   function activeHandler(e) {
     if (e === 'menu') {
@@ -20,6 +20,7 @@ const Header = ({ themeColor }) => {
             activeHandler={activeHandler}
             active={active}
             themeColor={themeColor}
+            counter={counter}
           />
         </div>
       </div>

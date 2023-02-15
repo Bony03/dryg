@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import s from './Basket.module.css'
-const Basket = ({ themeColor, activeHandler }) => {
-  const [counter, setCounter] = useState(0)
+const Basket = ({ themeColor, activeHandler, counter }) => {
   return (
     <div
       className={themeColor == 'black' ? `${s.account} ${s.black}` : s.account}

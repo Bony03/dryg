@@ -1,11 +1,11 @@
-button {
+.button {
   padding: 0;
   margin: 15px auto;
   border: none;
   background: none;
 }
 
-button {
+.button {
   --primary-color: #000;
   --hovered-color: #07df48;
   position: relative;
@@ -16,14 +16,14 @@ button {
   align-items: center;
 }
 
-button p {
+.button p {
   margin: 0;
   position: relative;
   font-size: 25px;
   color: var(--primary-color);
 }
 
-button::after {
+.button::after {
   position: absolute;
   content: '';
   width: 0;
@@ -34,10 +34,10 @@ button::after {
   transition: 0.3s ease-out;
 }
 
-button p::before {
+.button p::before {
   position: absolute;
   /*   box-sizing: border-box; */
-  content: 'Login';
+  content: attr(value);
   width: 0%;
   inset: 0;
   color: var(--hovered-color);
@@ -45,20 +45,20 @@ button p::before {
   transition: 0.3s ease-out;
 }
 
-button:hover::after {
+.button:hover::after {
   width: 100%;
 }
 
-button:hover p::before {
+.button:hover p::before {
   width: 100%;
 }
 
-button:hover svg {
+.button:hover svg {
   transform: translateX(4px);
   color: var(--hovered-color);
 }
 
-button svg {
+.button svg {
   color: var(--primary-color);
   transition: 0.2s;
   position: relative;

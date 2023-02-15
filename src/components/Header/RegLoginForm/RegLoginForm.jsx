@@ -13,7 +13,7 @@ const RegLoginForm = ({ form }) => {
             <Form
               method={'POST'}
               labels={['email', 'password', 'repeat password']}
-              button={'Login'}
+              button={'Register'}
             />
           </div>
         ) : (
