@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 60px;
+  left: calc(50% - 160px);
+  z-index: 20;
+  overflow: hidden;
+  visibility: hidden;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  min-width: 320px;
+  padding: 15px;
+  border-radius: 3px;
+  transform: translateY(-101%);
+  transition: all 0.3s ease-out;
+}
+.active.container {
+  visibility: visible;
+}
+.active.container .card {
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+}
+.card h1 {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.signup {
+  display: flex;
+  justify-content: center;
+  color: #108df3;
+  cursor: pointer;
+}

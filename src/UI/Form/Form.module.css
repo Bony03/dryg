@@ -1,0 +1,40 @@
+.formBlock {
+  position: relative;
+  margin-bottom: 20px;
+}
+.input {
+  color: #056ec5;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #000000;
+  padding: 10px;
+  transition: all 0.3 ease-out;
+}
+.label {
+  position: absolute;
+  color: #888888;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  top: 50%;
+  left: 10px;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.5;
+  text-transform: capitalize;
+  padding: 0 5px;
+}
+
+.input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translate(10px -50%) scale(0.5);
+  opacity: 1;
+  background-color: #fff;
+  color: #056ec5;
+}
+
+.input:focus {
+  border: 3px solid #056ec5;
+  border-radius: 5px;
+}

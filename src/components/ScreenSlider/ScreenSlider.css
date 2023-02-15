@@ -1,0 +1,68 @@
+.swiper-wrapper {
+  width: 100%;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: '';
+  font-family: none;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 16px solid #ffffff;
+  transition: border-bottom 1s ease;
+}
+.black .swiper-button-next:after,
+.black .swiper-button-prev:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 16px solid #000000;
+}
+.swiper-button-prev {
+  top: calc(50vh - 60px);
+  left: calc(100vw - 28px);
+}
+.swiper-button-next {
+  top: calc(50vh + 60px);
+  right: 1px;
+  transform: rotate(180deg);
+}
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  top: 50vh;
+  right: 7px;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.swiper-pagination-bullet {
+  background-color: #ffffff;
+  border-radius: 0;
+  width: 15px;
+  opacity: 1;
+  transition: background-color 1s ease;
+}
+.black .swiper-pagination-bullet {
+  background-color: #000000;
+}
+.swiper-pagination-bullet-active {
+  width: 35px;
+}
+.swiper-slide {
+  padding: 58px 0px;
+}
+
+.secondSwiper .swiper-button-prev {
+  left: 10px;
+  top: 90%;
+  transform: rotate(-90deg);
+  z-index: 51;
+}
+.secondSwiper .swiper-button-next {
+  top: 90%;
+  right: 10px;
+  transform: rotate(90deg);
+  z-index: 51;
+}
