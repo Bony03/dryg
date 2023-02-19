@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import s from './Basket.module.css'
 import { deleteFromBasket } from '../../../../store/reducerBasket'
-const Basket = ({ active }) => {
+const Basket = () => {
   const [totalPrice, setTotalPrice] = useState(0)
   const basketsElements = useSelector((state) => state.basket.basket)
+  const active = useSelector((state) => state.active.basket)
   useEffect(() => {
     if (basketsElements) {
       let k = 0
@@ -19,7 +20,7 @@ const Basket = ({ active }) => {
     dispatch(deleteFromBasket({ id, quantity }))
   }
   return (
-    <div className={active.basket ? `${s.container} ${s.active}` : s.container}>
+    <div className={active ? `${s.container} ${s.active}` : s.container}>
       {basketsElements.length > 0 ? (
         basketsElements.map((item) => {
           return (

@@ -1,14 +1,18 @@
 import React from 'react'
 import s from './Menu.module.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  setActiveMenuCreator,
+  setActiveBasketCreator,
+} from '../../../store/reducerActive'
 import Basket from './Basket/Basket'
-const Menu = ({ activeHandler, active, themeColor }) => {
+const Menu = ({ themeColor }) => {
   const counter = useSelector((state) => state.basket.count)
+  const active = useSelector((state) => state.active.menu)
+  const dispatch = useDispatch()
   return (
     <>
-      <nav
-        className={active.menu ? `${s.headerMenu} ${s.active}` : s.headerMenu}
-      >
+      <nav className={active ? `${s.headerMenu} ${s.active}` : s.headerMenu}>
         <ul
           className={
             themeColor == 'black' ? `${s.menuList} ${s.black}` : s.menuList
@@ -28,20 +32,20 @@ const Menu = ({ activeHandler, active, themeColor }) => {
               className={s.basket}
               counter={counter}
               onClick={() => {
-                activeHandler('basket')
+                dispatch(setActiveBasketCreator())
               }}
             >
               Basket
             </a>
           </li>
         </ul>
-        <Basket active={active} />
+        <Basket />
         <div
           className={
             themeColor == 'black' ? `${s.menuIcon} ${s.black}` : s.menuIcon
           }
           onClick={() => {
-            activeHandler('menu')
+            dispatch(setActiveMenuCreator())
           }}
         >
           <span></span>

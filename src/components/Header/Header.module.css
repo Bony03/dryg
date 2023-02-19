@@ -44,6 +44,3 @@
   display: flex;
   flex-direction: row-reverse;
 }
-.active .headerLogo {
-  color: #000000;
-}
