@@ -1,0 +1,22 @@
+.account {
+  padding: 0 15px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.account svg {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+  transition: all 1s ease;
+}
+.black.account svg {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  fill: #000000;
+}
+.active .account svg {
+  fill: #000000;
+}

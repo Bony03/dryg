@@ -2,7 +2,13 @@ import React from 'react'
 import s from './BuyButton.module.css'
 const BuyButton = ({ children, onclick, id }) => {
   return (
-    <button onClick={onclick} className={s.button} number={id}>
+    <button
+      onClick={(e) => {
+        onclick()
+      }}
+      className={s.button}
+      number={id}
+    >
       <p cssattr={children}>{children}</p>
       <svg
         width="67"

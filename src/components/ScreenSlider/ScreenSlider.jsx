@@ -11,12 +11,11 @@ const documentSizes = {
   width: window.innerWidth,
 }
 
-const ScreenSlider = ({ themeColor, setThemeColor, store, setCounter }) => {
+const ScreenSlider = ({ setThemeColor, store }) => {
   return (
     <div style={{ overflow: 'hidden' }}>
       <Swiper
-        navigation={true}
-        modules={[Navigation, Pagination, Mousewheel]}
+        modules={[Pagination, Mousewheel]}
         slidesPerView={1}
         direction="vertical"
         height={documentSizes.height}
@@ -39,7 +38,7 @@ const ScreenSlider = ({ themeColor, setThemeColor, store, setCounter }) => {
           <BackgroundImage />
         </SwiperSlide>
         <SwiperSlide>
-          <Products store={store} setCounter={setCounter} />
+          <Products store={store} />
         </SwiperSlide>
         <SwiperSlide></SwiperSlide>
       </Swiper>

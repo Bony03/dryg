@@ -1,39 +1,29 @@
-.account {
-  padding: 0 15px;
-  position: relative;
-  z-index: 2;
-  cursor: pointer;
-}
-.account svg {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  fill: #ffffff;
-  transition: all 1s ease;
-}
-.black.account svg {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  fill: #000000;
-}
-.active .account svg {
-  fill: #000000;
-}
-.basket {
-  position: relative;
-}
-.basket::after {
-  content: attr(counter);
-  color: #ffffff;
-  display: flex;
+.container {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
-  top: 10px;
-  left: -10px;
+  padding: 15px;
+  background-color: white;
+  width: 100%;
+  z-index: -2;
+}
+.active.container {
+  display: flex;
+}
+.element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 10px 10px 10px 10px;
+  margin: 5px;
+  padding: 5px;
+}
+.image {
+  max-width: 30%;
+  object-fit: cover;
 }

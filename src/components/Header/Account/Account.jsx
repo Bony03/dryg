@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import s from './Basket.module.css'
-const Basket = ({ themeColor, activeHandler, counter }) => {
+import s from './Account.module.css'
+
+const Account = ({ themeColor, activeHandler, active }) => {
   return (
     <div
-      className={themeColor == 'black' ? `${s.account} ${s.black}` : s.account}
+      className={
+        themeColor == 'black' || active ? `${s.account} ${s.black}` : s.account
+      }
       onClick={() => {
         activeHandler('form')
       }}
     >
-      <span className={s.basket} counter={counter}>
+      <span className={s.basket}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -26,4 +28,4 @@ const Basket = ({ themeColor, activeHandler, counter }) => {
   )
 }
 
-export default Basket
+export default Account

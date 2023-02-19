@@ -6,7 +6,7 @@ import 'swiper/css/pagination'
 import s from './Products.module.css'
 import ProductCard from './ProductCard'
 
-const Products = ({ store, setCounter }) => {
+const Products = ({ store }) => {
   return (
     <div className={s.container}>
       <Swiper
@@ -38,7 +38,7 @@ const Products = ({ store, setCounter }) => {
                 sizes={item.sizes}
                 colors={item.colors}
                 styles={item.styles}
-                setCounter={setCounter}
+                price={item.price}
               />
             </SwiperSlide>
           )

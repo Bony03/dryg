@@ -1,28 +1,7 @@
 .swiper-wrapper {
   width: 100%;
 }
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  content: '';
-  font-family: none;
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 16px solid #000000;
-  transition: border-bottom 1s ease;
-}
 
-.swiper-button-prev {
-  top: calc(50vh - 60px);
-  left: calc(100vw - 28px);
-}
-.swiper-button-next {
-  top: calc(50vh + 60px);
-  right: 1px;
-  transform: rotate(180deg);
-}
 .swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper-vertical > .swiper-pagination-bullets {
   top: 50vh;
@@ -34,14 +13,15 @@
 }
 .swiper-pagination-bullet {
   background-color: #000000;
-  border-radius: 0;
-  width: 15px;
+  border-radius: 50%;
   opacity: 1;
-  transition: background-color 1s ease;
 }
 
 .swiper-pagination-bullet-active {
-  width: 35px;
+  width: 15px;
+  height: 15px;
+  right: -3px;
+  position: relative;
 }
 .swiper-slide {
   padding: 58px 0px;
@@ -51,22 +31,16 @@
 }
 .secondSwiper .swiper-button-prev {
   left: 10px;
-  top: 93%;
+  top: 95%;
   z-index: 51;
 }
 .secondSwiper .swiper-button-next {
-  top: 93%;
+  top: 95%;
   right: 20px;
   z-index: 51;
 }
 .secondSwiper .swiper-button-next:after,
 .secondSwiper .swiper-button-prev:after {
-  font-family: none;
-  display: block;
-  width: 100px;
-  height: 0;
-  border: none;
-  transition: border-bottom 1s ease;
   color: #000000;
 }
 .secondSwiper .swiper-button-prev:after {
@@ -74,5 +48,4 @@
 }
 .secondSwiper .swiper-button-next:after {
   content: '⇀';
-  transform: rotate(180deg);
 }
