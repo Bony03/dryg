@@ -15,7 +15,7 @@ const Menu = ({ themeColor }) => {
       <nav className={active ? `${s.headerMenu} ${s.active}` : s.headerMenu}>
         <ul
           className={
-            themeColor == 'black' ? `${s.menuList} ${s.black}` : s.menuList
+            themeColor === 'black' ? `${s.menuList} ${s.black}` : s.menuList
           }
         >
           <li className={s.menuItem}>
