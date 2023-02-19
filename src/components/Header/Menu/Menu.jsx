@@ -5,7 +5,7 @@ import {
   setActiveMenuCreator,
   setActiveBasketCreator,
 } from '../../../store/reducerActive'
-import Basket from './Basket/Basket'
+import Basket from '../Basket/Basket'
 const Menu = ({ themeColor }) => {
   const counter = useSelector((state) => state.basket.count)
   const active = useSelector((state) => state.active.menu)

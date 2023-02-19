@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import s from './Basket.module.css'
-import { deleteFromBasket } from '../../../../store/reducerBasket'
+import {
+  deleteFromBasket,
+  changeQuantityCreator,
+} from '../../../store/reducerBasket'
 const Basket = () => {
   const [totalPrice, setTotalPrice] = useState(0)
   const basketsElements = useSelector((state) => state.basket.basket)
@@ -19,6 +22,9 @@ const Basket = () => {
   const deleleHandler = (id, quantity) => {
     dispatch(deleteFromBasket({ id, quantity }))
   }
+  const changeQuantityHandler = (id, quantity) => {
+    dispatch(changeQuantityCreator({ id, quantity }))
+  }
   return (
     <div className={active ? `${s.container} ${s.active}` : s.container}>
       {basketsElements.length > 0 ? (
@@ -30,7 +36,16 @@ const Basket = () => {
                 <h1 className={s.title}>Назва: {item.title}</h1>
                 <h1 className={s.color}>Колір: {item.color}</h1>
                 <h1 className={s.size}>Розмір: {item.size}</h1>
-                <h1 className={s.quantity}>Кількість: {item.quantity}</h1>
+                <h1 className={s.quantity}>
+                  Кількість:{' '}
+                  <input
+                    type="text"
+                    value={item.quantity}
+                    onChange={(e) => {
+                      changeQuantityHandler(item.id, e.target.value)
+                    }}
+                  ></input>
+                </h1>
               </div>
               <div
                 className={s.icon}
