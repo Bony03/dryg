@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import RegLoginForm from './RegLoginForm/RegLoginForm'
 import Menu from './Menu/Menu'
 import Account from './Account/Account'
-const Header = ({ themeColor }) => {
+const Header = () => {
   const active = useSelector((state) => state.active)
   return (
     <div>
@@ -12,7 +12,7 @@ const Header = ({ themeColor }) => {
         <div className={s.headerContainer}>
           <div
             className={
-              themeColor == 'black'
+              active.theme === 'black'
                 ? `${s.headerLogo} ${s.black}`
                 : s.headerLogo
             }
@@ -20,8 +20,8 @@ const Header = ({ themeColor }) => {
             Dryg
           </div>
           <div className={s.menuElements}>
-            <Menu active={active} themeColor={themeColor} />
-            <Account themeColor={themeColor} active={active.menu} />
+            <Menu active={active} />
+            <Account active={active.theme} />
           </div>
 
           <RegLoginForm form={active.form} />

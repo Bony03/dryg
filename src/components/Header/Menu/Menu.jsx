@@ -1,21 +1,20 @@
 import React from 'react'
 import s from './Menu.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  setActiveMenuCreator,
-  setActiveBasketCreator,
-} from '../../../store/reducerActive'
+import { setActiveMenu, setActiveBasket } from '../../../store/activeSlice'
 import Basket from '../Basket/Basket'
-const Menu = ({ themeColor }) => {
+const Menu = () => {
   const counter = useSelector((state) => state.basket.count)
-  const active = useSelector((state) => state.active.menu)
+  const active = useSelector((state) => state.active)
   const dispatch = useDispatch()
   return (
     <>
-      <nav className={active ? `${s.headerMenu} ${s.active}` : s.headerMenu}>
+      <nav
+        className={active.menu ? `${s.headerMenu} ${s.active}` : s.headerMenu}
+      >
         <ul
           className={
-            themeColor === 'black' ? `${s.menuList} ${s.black}` : s.menuList
+            active.theme === 'black' ? `${s.menuList} ${s.black}` : s.menuList
           }
         >
           <li className={s.menuItem}>
@@ -32,7 +31,7 @@ const Menu = ({ themeColor }) => {
               className={s.basket}
               counter={counter}
               onClick={() => {
-                dispatch(setActiveBasketCreator())
+                dispatch(setActiveBasket())
               }}
             >
               Basket
@@ -42,10 +41,10 @@ const Menu = ({ themeColor }) => {
         <Basket />
         <div
           className={
-            themeColor == 'black' ? `${s.menuIcon} ${s.black}` : s.menuIcon
+            active.theme === 'black' ? `${s.menuIcon} ${s.black}` : s.menuIcon
           }
           onClick={() => {
-            dispatch(setActiveMenuCreator())
+            dispatch(setActiveMenu())
           }}
         >
           <span></span>

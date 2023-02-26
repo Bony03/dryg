@@ -1,15 +1,18 @@
 import { useDispatch } from 'react-redux'
 import s from './Account.module.css'
-import { setActiveFormCreator } from '../../../store/reducerActive'
-const Account = ({ themeColor, active }) => {
+import { setActiveFrom } from '../../../store/activeSlice'
+const Account = ({ active }) => {
   const dispatch = useDispatch()
+
   return (
     <div
       className={
-        themeColor == 'black' || active ? `${s.account} ${s.black}` : s.account
+        active === 'black' || active.menu
+          ? `${s.account} ${s.black}`
+          : s.account
       }
       onClick={() => {
-        dispatch(setActiveFormCreator())
+        dispatch(setActiveFrom())
       }}
     >
       <span className={s.basket}>

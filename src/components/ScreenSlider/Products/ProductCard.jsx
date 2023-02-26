@@ -2,7 +2,7 @@ import React from 'react'
 import s from './ProductCard.module.css'
 import BuyButton from '../../../UI/MyButton/BuyButton/BuyButton'
 import { useDispatch } from 'react-redux'
-import { addToBasket } from '../../../store/reducerBasket'
+import { addToBasket } from '../../../store/basketSlice'
 
 const ProductCard = ({ id, title, colors, sizes, styles, price }) => {
   const dispatch = useDispatch()

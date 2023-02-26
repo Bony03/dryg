@@ -1,12 +1,14 @@
-import { combineReducers, createStore } from 'redux'
-import reducerBasket from './reducerBasket'
-import reducerCash from './reducerCash'
-import reducerActive from './reducerActive'
+import activeSlice from './activeSlice'
+import basketSlice from './basketSlice'
 import { composeWithDevTools } from 'redux-devtools-extension'
-const rootReducer = combineReducers({
-  basket: reducerBasket,
-  cash: reducerCash,
-  active: reducerActive,
-})
+import { configureStore } from '@reduxjs/toolkit'
 
-export const store = createStore(rootReducer, composeWithDevTools())
+export const store = configureStore(
+  {
+    reducer: {
+      basket: basketSlice,
+      active: activeSlice,
+    },
+  },
+  composeWithDevTools()
+)

@@ -12,9 +12,15 @@
   justify-content: end;
 }
 .swiper-pagination-bullet {
-  background-color: #000000;
   border-radius: 50%;
   opacity: 1;
+  transition: background-color 0.5s ease-out;
+}
+.white .swiper-pagination-bullet {
+  background-color: #ffffff;
+}
+.black .swiper-pagination-bullet {
+  background-color: #000000;
 }
 
 .swiper-pagination-bullet-active {

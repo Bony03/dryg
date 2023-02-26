@@ -6,12 +6,16 @@ import 'swiper/css/pagination'
 import BackgroundImage from './BackgroundImage/BackgroundImage'
 import Products from './Products/Products'
 import './ScreenSlider.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { setBlackTheme, setWhiteTheme } from '../../store/activeSlice'
 const documentSizes = {
   height: window.innerHeight,
   width: window.innerWidth,
 }
 
 const ScreenSlider = ({ setThemeColor, store }) => {
+  const dispatch = useDispatch()
+  const theme = useSelector((state) => state.active.theme)
   return (
     <div style={{ overflow: 'hidden' }}>
       <Swiper
@@ -26,11 +30,12 @@ const ScreenSlider = ({ setThemeColor, store }) => {
           clickable: true,
         }}
         mousewheel={true}
+        className={theme === 'black' ? 'black' : 'white'}
         onActiveIndexChange={(swiper) => {
           if (swiper.activeIndex > 0) {
-            setThemeColor('black')
+            dispatch(setBlackTheme())
           } else {
-            setThemeColor('white')
+            dispatch(setWhiteTheme())
           }
         }}
       >

@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import s from './Basket.module.css'
-import {
-  deleteFromBasket,
-  changeQuantityCreator,
-} from '../../../store/reducerBasket'
+import { deleteFromBasket, changeQuantity } from '../../../store/basketSlice'
 const Basket = () => {
   const [totalPrice, setTotalPrice] = useState(0)
   const basketsElements = useSelector((state) => state.basket.basket)
@@ -23,7 +20,7 @@ const Basket = () => {
     dispatch(deleteFromBasket({ id, quantity }))
   }
   const changeQuantityHandler = (id, quantity) => {
-    dispatch(changeQuantityCreator({ id, quantity }))
+    dispatch(changeQuantity({ id, quantity }))
   }
   return (
     <div className={active ? `${s.container} ${s.active}` : s.container}>
@@ -38,13 +35,18 @@ const Basket = () => {
                 <h1 className={s.size}>Розмір: {item.size}</h1>
                 <h1 className={s.quantity}>
                   Кількість:{' '}
-                  <input
-                    type="text"
+                  <select
                     value={item.quantity}
-                    onChange={(e) => {
+                    onChange={(e) =>
                       changeQuantityHandler(item.id, e.target.value)
-                    }}
-                  ></input>
+                    }
+                  >
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
+                  </select>
                 </h1>
               </div>
               <div
