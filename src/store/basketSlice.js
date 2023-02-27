@@ -30,8 +30,8 @@ const basketSlice = createSlice({
       state.count -= 1
     },
     changeQuantity(state, action) {
-      state.basket.map((e) => {
-        if (e.id === action.payload.id && action.payload.id !== NaN) {
+      state.basket.forEach((e) => {
+        if (e.id === action.payload.id) {
           e.quantity = Number(action.payload.quantity)
         }
       })
